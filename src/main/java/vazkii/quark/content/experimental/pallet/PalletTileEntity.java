@@ -158,7 +158,7 @@ public class PalletTileEntity extends TileSimpleInventory implements ITickableTi
 		int stackSize = stack.isEmpty() ? 64 : stack.getMaxStackSize();
 		maxAcceptedCount = height * STACKS_PER_HEIGHT * stackSize;
 		maxAcceptedCount = 120;
-		// TODO handle placing blocks that allow you to go over the height´
+		//placing blocks over height
 		
 		int prevVisibleItems = currVisibleItems;
 		currVisibleItems = getDisplayedItems();

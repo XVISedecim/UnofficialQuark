@@ -13,11 +13,5 @@
   "result": {
     "item": "quark:smooth_basalt_stairs",
     "count": 4
-  },
-  "conditions": [
-    {
-      "type": "quark:flag",
-      "flag": "deepslate"
-    }
-  ]
+  }
 } 

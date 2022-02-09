@@ -21,77 +21,28 @@ import vazkii.quark.base.handler.ContributorRewardHandler;
 import vazkii.quark.base.handler.MiscUtil;
 
 public class QButton extends Button {
-	
+
 	private static final int ORANGE = 1;
 	private static final int PURPLE = 2;
 	private static final int RAINBOW = 3;
 	private static final int QUARK = 4;
 	
-	private static final List<Celebration> CELEBRATIONS = new ArrayList<>();
-	static {
-		celebrate("quark", 21, Month.MARCH, QUARK);
-		celebrate("vm", 29, Month.APRIL, PURPLE);
-		celebrate("minecraft", 18, Month.NOVEMBER, ORANGE);
-		
-		celebrate("vns", 9, Month.APRIL, ORANGE);
-		celebrate("vazkii", 22, Month.NOVEMBER, ORANGE);
-		celebrate("wire", 23, Month.SEPTEMBER, ORANGE);
-		
-		celebrate("iad", 6, Month.APRIL, RAINBOW);
-		celebrate("iad2", 26, Month.OCTOBER, RAINBOW);
-		celebrate("idr", 8, Month.NOVEMBER, RAINBOW);
-		celebrate("ld", 8, Month.OCTOBER, RAINBOW);
-		celebrate("lvd", 26, Month.APRIL, RAINBOW);
-		celebrate("ncod", 11, Month.OCTOBER, RAINBOW);
-		celebrate("nbpd", 14, Month.JULY, RAINBOW);
-		celebrate("ppad", 24, Month.MAY, RAINBOW);
-		celebrate("tdr", 20, Month.NOVEMBER, RAINBOW);
-		celebrate("tdv", 31, Month.MARCH, RAINBOW);
-		celebrate("zdd", 1, Month.MARCH, RAINBOW);
-
-		celebrate("afd", 1, Month.APRIL, QUARK);
-		celebrate("wwd", 3, Month.MARCH, PURPLE);
-		celebrate("hw", 31, Month.OCTOBER, ORANGE);
-		celebrate("xmas", 25, Month.DECEMBER, PURPLE);
-		celebrate("iwd", 8, Month.MARCH, PURPLE);
-		celebrate("wpld", 5, Month.MAY, PURPLE);
-		celebrate("iyd", 12, Month.AUGUST, PURPLE);
-		celebrate("hrd", 9, Month.DECEMBER, PURPLE);
-		celebrate("ny", 1, 3, Month.JANUARY, PURPLE);
-		celebrate("doyouremember", 21, Month.SEPTEMBER, ORANGE);
-
-		// Order is important, ensure mutli day ones are at the bottom
-		celebrate("pm", 1, 30, Month.JUNE, RAINBOW);
-		celebrate("baw", 16, 22, Month.SEPTEMBER, RAINBOW);
-		celebrate("taw", 13, 19, Month.NOVEMBER, RAINBOW);
-	}
-	
 	private static void celebrate(String name, int day, Month month, int tier) {
-		celebrate(name, day, day, month, tier);
-	}
-	
-	private static void celebrate(String name, int day, int end, Month month, int tier) {
-		CELEBRATIONS.add(new Celebration(day, month.getValue(), (end - day), tier, name));
+		celebrate(name, day, month, tier);
 	}
 
 
 	private final boolean gay;
 	private Celebration celebrating;
-	
+
 	public QButton(int x, int y) {
 		super(x, y, 20, 20, new StringTextComponent("q"), QButton::click);
-		
+
 		Calendar calendar = Calendar.getInstance();
 		int month = calendar.get(Calendar.MONTH) + 1;
 		int day = calendar.get(Calendar.DATE);
-		
+
 		gay = month == 6;
-		
-		for(Celebration c : CELEBRATIONS)
-			if(c.running(day, month)) {
-				celebrating = c;
-				break;
-			}
 	}
 	
 	@Override
