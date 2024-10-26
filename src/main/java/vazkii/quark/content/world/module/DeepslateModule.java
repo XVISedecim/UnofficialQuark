@@ -6,18 +6,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.world.gen.GenerationStage;
 import vazkii.quark.base.block.QuarkBlock;
-import vazkii.quark.base.block.QuarkPillarBlock;
-import vazkii.quark.base.handler.QuarkSounds;
 import vazkii.quark.base.handler.VariantHandler;
 import vazkii.quark.base.module.LoadModule;
 import vazkii.quark.base.module.ModuleCategory;
 import vazkii.quark.base.module.QuarkModule;
 import vazkii.quark.base.module.config.Config;
 import vazkii.quark.base.module.config.type.DimensionConfig;
-import vazkii.quark.base.world.WorldGenHandler;
-import vazkii.quark.base.world.WorldGenWeights;
 
 @LoadModule(category = ModuleCategory.WORLD)
 public class DeepslateModule extends QuarkModule {
